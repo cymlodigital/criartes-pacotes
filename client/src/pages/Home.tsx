@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Check, Mail, MapPin, Phone, Send, X } from "lucide-react";
 
+import PrintPricing from "@/components/PrintPricing";
+
 type PackageCard = {
   name: string;
   subtitle: string;
@@ -45,7 +47,7 @@ const packages: PackageCard[] = [
   {
     name: "PREMIUM",
     subtitle: "EDIÇÃO DE LUXO",
-    price: "785.000 KZ",
+    price: "895.000 KZ",
     items: [
       "Suporte estratégico para o lançamento e campanha de divulgação",
       "2 Entrevistas nas Rádios",
@@ -135,6 +137,8 @@ export default function Home() {
             </article>
           ))}
         </section>
+
+        <PrintPricing onSelectPackage={openPackageQuestions} />
 
         <section className="package-contact" id="contacto">
           <div><p className="package-eyebrow">DÊ O PRÓXIMO PASSO</p><h2>O seu livro merece ser visto.</h2><p>Fale com a nossa equipa para escolher o pacote mais adequado ao seu projecto e receber orientação para avançar.</p></div>
