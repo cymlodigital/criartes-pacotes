@@ -110,7 +110,7 @@ export default function Home() {
     <div className="package-page">
       <header className="package-header">
         <a className="package-brand" href="#inicio" aria-label="Criartes Gráfica e Editora">
-          <img className="package-real-logo" src="/manus-storage/criartes-logo_8e242f03.webp" alt="Criartes Gráfica e Editora" decoding="async" />
+          <img className="package-real-logo" src={`${import.meta.env.BASE_URL}images/criartes-logo.webp`} alt="Criartes Gráfica e Editora" decoding="async" />
         </a>
         <a className="package-header-cta" href={whatsappUrl} target="_blank" rel="noreferrer">Falar com a equipa <Send size={15} /></a>
       </header>
@@ -128,7 +128,7 @@ export default function Home() {
               <div className="package-card-title"><span>PACOTE</span><h2>{item.name}</h2><small>({item.subtitle})</small></div>
               {item.price && <div className="package-price">{item.price}</div>}
               {!item.price && <div className="package-price package-price-empty">À MEDIDA</div>}
-              <div className="package-book-art" aria-hidden="true"><img className="package-book-image" src="/manus-storage/livro-criartes_26d0f791.webp" alt="Livro Criartes" decoding="async" /></div>
+              <div className="package-book-art" aria-hidden="true"><img className="package-book-image" src={`${import.meta.env.BASE_URL}images/livro-criartes.webp`} alt="Livro Criartes" decoding="async" /></div>
               <ul className="package-items">{item.items.map((benefit) => <li key={benefit}><Check size={14} /> <span>{benefit}</span></li>)}</ul>
               <div className="package-note">Os livros com mais de 150 páginas têm um custo adicional de 1.000 KZ por cada página.</div>
               <div className="package-card-question">Quer avançar com este pacote?</div>
@@ -147,13 +147,13 @@ export default function Home() {
 
         <section className="quality-section" aria-label="Testemunhos sobre a qualidade de impressão">
           <div className="quality-copy"><p className="package-eyebrow">QUALIDADE QUE SE NOTA</p><h2>Aumente a qualidade do seu livro.</h2><p>Uma boa impressão valoriza a sua obra, respeita as cores do seu design e transmite profissionalismo em cada página.</p><blockquote>“A qualidade da sua impressão conseguiu reflectir a cor real que estava no design. Meus parabéns e obrigado pelo profissionalismo.”<cite>— Testemunho de cliente Criartes</cite></blockquote></div>
-          <div className="quality-proof"><img src="/manus-storage/testemunho-qualidade-1_5d9a36e3.webp" alt="Testemunho de cliente sobre a qualidade de impressão" loading="lazy" decoding="async" /><img src="/manus-storage/testemunho-qualidade-2_ab573339.webp" alt="Testemunho de cliente sobre a fidelidade das cores na impressão" loading="lazy" decoding="async" /></div>
+          <div className="quality-proof"><img src={`${import.meta.env.BASE_URL}images/testemunho-qualidade-1.webp`} alt="Testemunho de cliente sobre a qualidade de impressão" loading="lazy" decoding="async" /><img src={`${import.meta.env.BASE_URL}images/testemunho-qualidade-2.webp`} alt="Testemunho de cliente sobre a fidelidade das cores na impressão" loading="lazy" decoding="async" /></div>
         </section>
       </main>
 
       {activePackage && <div className="package-modal-backdrop" role="presentation" onClick={closePackageQuestions}><div className="package-modal" role="dialog" aria-modal="true" aria-label={`Perguntas sobre o Pacote ${activePackage}`} onClick={(event) => event.stopPropagation()}><button className="package-modal-close" onClick={closePackageQuestions} aria-label="Fechar"><X size={20} /></button><p className="package-eyebrow">PACOTE {activePackage}</p>{questionStep < packageQuestions.length ? <><div className="package-modal-progress"><span><i style={{ width: `${((questionStep + 1) / packageQuestions.length) * 100}%` }} /></span></div><h2>{packageQuestions[questionStep].question}</h2><div className="package-modal-options">{packageQuestions[questionStep].options.map((option) => <button key={option} onClick={() => chooseQuestionAnswer(option)}>{option}<Send size={14} /></button>)}</div></> : <><div className="package-modal-success"><Check size={22} /></div><h2>Obrigado pelas respostas.</h2><p>Agora fale directamente com a Criartes para receber a orientação sobre o seu pacote.</p><a className="package-button package-button-gold" href={modalWhatsappUrl} target="_blank" rel="noreferrer">Enviar para o WhatsApp <Send size={17} /></a></>}</div></div>}
 
-      <footer className="package-footer-main"><div><a className="package-brand" href="#inicio"><img className="package-real-logo" src="/manus-storage/criartes-logo_8e242f03.webp" alt="Criartes Gráfica e Editora" decoding="async" /></a><p>O próximo livro pode ser o seu.</p></div><div className="package-footer-info"><span><MapPin size={15} /> Bairro Prenda, lado oposto da Samba, defronte o Suave</span><a href="tel:+244948595707"><Phone size={15} /> 948 595 707</a><a href="https://www.criartes.lol" target="_blank" rel="noreferrer">www.criartes.lol</a><a href="mailto:geral@editoracriartes.com"><Mail size={15} /> geral@editoracriartes.com</a></div><div className="package-footer-bottom">CRIARTES, GRÁFICA E EDITORA <span>© 2026</span></div></footer>
+      <footer className="package-footer-main"><div><a className="package-brand" href="#inicio"><img className="package-real-logo" src={`${import.meta.env.BASE_URL}images/criartes-logo.webp`} alt="Criartes Gráfica e Editora" decoding="async" /></a><p>O próximo livro pode ser o seu.</p></div><div className="package-footer-info"><span><MapPin size={15} /> Bairro Prenda, lado oposto da Samba, defronte o Suave</span><a href="tel:+244948595707"><Phone size={15} /> 948 595 707</a><a href="https://www.criartes.lol" target="_blank" rel="noreferrer">www.criartes.lol</a><a href="mailto:geral@editoracriartes.com"><Mail size={15} /> geral@editoracriartes.com</a></div><div className="package-footer-bottom">CRIARTES, GRÁFICA E EDITORA <span>© 2026</span></div></footer>
     </div>
   );
 }

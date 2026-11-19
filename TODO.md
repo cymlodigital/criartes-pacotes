@@ -21,6 +21,11 @@
 - [x] Apresentar testemunhos focados na qualidade de impressão, usando as imagens e textos fornecidos.
 - [x] Incluir WhatsApp, email, localização, telefone e website da Criartes.
 
+## Publicação GitHub Pages
+- [ ] Publicar o site em `https://cymlodigital.github.io/criartes-pacotes/` a partir de um repositório público, com o código e os ficheiros do site visíveis publicamente.
+- [ ] Fazer funcionar a página principal e as imagens do próprio site sob o subcaminho `/criartes-pacotes/`.
+- [ ] Configurar GitHub Pages para servir a raiz do ramo `gh-pages`.
+
 ## Preparação e entrega
 - [x] Servir a rota principal através de `client/public/manus-routes.json`.
 - [x] Confirmar que o projecto passa as verificações TypeScript e build estático; os testes existentes também passam.
