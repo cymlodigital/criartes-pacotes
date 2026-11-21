@@ -171,7 +171,8 @@ function vitePluginPublicPlatformConfig(): Plugin {
 const plugins = [vitePluginPublicPlatformConfig(), react(), tailwindcss(), jsxLocPlugin(), vitePluginManusDebugCollector()];
 
 export default defineConfig({
-  base: process.env.VITE_BASE_PATH || "/",
+  // GitHub Pages serves this site from the custom domain's root.
+  base: "/",
   plugins,
   resolve: {
     alias: {
